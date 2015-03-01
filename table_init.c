@@ -5,7 +5,7 @@
 ** Login   <girard_x@epitech.net>
 ** 
 ** Started on  Thu Feb 26 10:12:41 2015 ALEXIS GIRARDEY
-** Last update Sun Mar  1 19:41:09 2015 ALEXIS GIRARDEY
+** Last update Sun Mar  1 20:55:36 2015 ALEXIS GIRARDEY
 */
 
 #include <stdio.h>
@@ -19,7 +19,8 @@ struct s_bol	*init_bol()
 {
   t_bol		*newBol;
 
-  newBol = (t_bol *) malloc(sizeof(struct s_bol));
+  if ((newBol = (t_bol *) malloc(sizeof(struct s_bol)) == NULL))
+    exit(0);
   newBol->bol = PLEIN;
   newBol->baguette = LIBRE;
   return (newBol);
@@ -29,7 +30,8 @@ struct s_philo		*init_philo(t_bol *bol, int id)
 {
   t_philo	*newPhilo;
 
-  newPhilo = (t_philo *) malloc(sizeof(struct s_philo));
+  if ((newPhilo = (t_philo *) malloc(sizeof(struct s_philo)) == NULL))
+    exit(0);
   newPhilo->id = id;
   newPhilo->etat = REPOS;
   newPhilo->bol = bol;
