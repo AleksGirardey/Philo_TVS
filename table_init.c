@@ -5,7 +5,7 @@
 ** Login   <girard_x@epitech.net>
 ** 
 ** Started on  Thu Feb 26 10:12:41 2015 ALEXIS GIRARDEY
-** Last update Sat Feb 28 13:13:37 2015 ALEXIS GIRARDEY
+** Last update Sat Feb 28 14:31:26 2015 ALEXIS GIRARDEY
 */
 
 #include <stdio.h>
@@ -53,19 +53,5 @@ struct s_philo		*init_table()
 
 int	main()
 {
-  int	i;
-  t_philo *table;
-
-  table = init_table();
-
-  table->next->next->next->next->bol->bol = VIDE;
-  for (i = 0; i < 7; i++)
-    {
-      if (table->bol->bol == 1)
-	printf("[%d] VIDE\n", i);
-      else
-	printf("[%d] PLEIN\n", i);
-      table = table->next;
-    }
-  return (0);
+  
 }
