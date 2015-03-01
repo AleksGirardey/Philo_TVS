@@ -5,11 +5,12 @@
 ** Login   <girard_x@epitech.net>
 ** 
 ** Started on  Thu Feb 26 10:12:41 2015 ALEXIS GIRARDEY
-** Last update Sun Mar  1 16:30:41 2015 ALEXIS GIRARDEY
+** Last update Sun Mar  1 18:53:00 2015 ALEXIS GIRARDEY
 */
 
 #include <stdio.h>
 #include <stdlib.h>
+#include "Fct_usuelles.h"
 #include "Philosophes.h"
 #include "Bol.h"
 #include "actions.h"
@@ -43,31 +44,29 @@ struct s_philo		*init_table()
 
   i = 1;
   table = init_philo(init_bol(), i);
-  table->need_ID = i;
   temp = table;
   while (i < 8)
     {
       temp->next = init_philo(init_bol(), i + 1);
-      table->need_ID = i;
       temp = temp->next;
       i++;
     }
   return (table);
 }
 
-void		lets_eat(t_philo *table)
+struct s_philo	*lets_eat(t_philo *table)
 {
   int		i;
   t_philo	*tmp;
   t_philo	*philo;
 
   i = 1;
-  tmp = table;
   while (i < 8)
     {
       table->need_ID = i;
-      philo = need_that_philo(tmp, i);
+      philo = need_that_philo(table, i);
       pthread_create(&(philo->thread), NULL, philo_meca, table);
-      tmp = tmp->next;
+      ++i;
     }
+  return (table);
 }

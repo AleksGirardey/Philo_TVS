@@ -5,9 +5,10 @@
 ** Login   <girard_x@epitech.net>
 ** 
 ** Started on  Sun Mar  1 14:20:17 2015 ALEXIS GIRARDEY
-** Last update Sun Mar  1 16:19:53 2015 ALEXIS GIRARDEY
+** Last update Sun Mar  1 17:40:02 2015 ALEXIS GIRARDEY
 */
 
+#include "Fct_usuelles.h"
 #include "actions.h"
 
 pthread_mutex_t		mutex = PTHREAD_MUTEX_INITIALIZER;

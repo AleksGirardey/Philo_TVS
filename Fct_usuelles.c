@@ -5,7 +5,7 @@
 ** Login   <girard_x@epitech.net>
 ** 
 ** Started on  Sat Feb 28 14:32:56 2015 ALEXIS GIRARDEY
-** Last update Sun Mar  1 16:11:55 2015 ALEXIS GIRARDEY
+** Last update Sun Mar  1 18:33:34 2015 ALEXIS GIRARDEY
 */
 
 #include <unistd.h>
@@ -60,7 +60,10 @@ int		check_B(t_philo *table, int id)
 
 struct s_philo		*need_that_philo(t_philo *table, int id)
 {
-  while (table->id != id)
-    table = table->next;
-  return (table);
+  t_philo		*tmp;
+
+  tmp = table;
+  while (tmp->id != id)
+    tmp = tmp->next;
+  return (tmp);
 }
