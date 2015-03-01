@@ -5,7 +5,7 @@
 ** Login   <girard_x@epitech.net>
 ** 
 ** Started on  Sat Feb 28 14:32:14 2015 ALEXIS GIRARDEY
-** Last update Sun Mar  1 18:39:11 2015 ALEXIS GIRARDEY
+** Last update Sun Mar  1 19:26:04 2015 ALEXIS GIRARDEY
 */
 
 #ifndef FCT_USUELLES_H_
@@ -15,8 +15,7 @@
 #include "Bol.h"
 
 int	nb_bols_plein(t_philo *table);
-int	can_eat(t_philo *table, int id_philo);
-int	check_B(t_philo *table, int id_philo);
+int	can_eat(t_philo *table);
 struct s_philo	*need_that_philo(t_philo *table, int id);
 struct s_philo	*lets_eat(t_philo *table);
 #endif

@@ -5,7 +5,7 @@
 ** Login   <girard_x@epitech.net>
 ** 
 ** Started on  Thu Feb 26 10:12:41 2015 ALEXIS GIRARDEY
-** Last update Sun Mar  1 18:53:00 2015 ALEXIS GIRARDEY
+** Last update Sun Mar  1 19:41:09 2015 ALEXIS GIRARDEY
 */
 
 #include <stdio.h>
@@ -45,19 +45,20 @@ struct s_philo		*init_table()
   i = 1;
   table = init_philo(init_bol(), i);
   temp = table;
+  i++;
   while (i < 8)
     {
-      temp->next = init_philo(init_bol(), i + 1);
+      temp->next = init_philo(init_bol(), i);
       temp = temp->next;
-      i++;
+      ++i;
     }
+  temp->next = table;
   return (table);
 }
 
 struct s_philo	*lets_eat(t_philo *table)
 {
   int		i;
-  t_philo	*tmp;
   t_philo	*philo;
 
   i = 1;
@@ -65,7 +66,7 @@ struct s_philo	*lets_eat(t_philo *table)
     {
       table->need_ID = i;
       philo = need_that_philo(table, i);
-      pthread_create(&(philo->thread), NULL, philo_meca, table);
+      pthread_create(&(philo->thread), NULL, philo_meca, philo);
       ++i;
     }
   return (table);

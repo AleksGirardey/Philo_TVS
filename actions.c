@@ -5,7 +5,7 @@
 ** Login   <girard_x@epitech.net>
 ** 
 ** Started on  Sun Mar  1 14:20:17 2015 ALEXIS GIRARDEY
-** Last update Sun Mar  1 17:40:02 2015 ALEXIS GIRARDEY
+** Last update Sun Mar  1 19:40:24 2015 ALEXIS GIRARDEY
 */
 
 #include "Fct_usuelles.h"
@@ -13,14 +13,11 @@
 
 pthread_mutex_t		mutex = PTHREAD_MUTEX_INITIALIZER;
 
-void		philo_manger(t_philo *philosophe, t_philo *table)
+void		philo_manger(t_philo *philosophe)
 {
   philosophe->etat = MANGER;
   philosophe->bol->baguette = OCCUPE;
-  if (philosophe->id == 7)
-    table->bol->baguette = OCCUPE;
-  else
-    philosophe->next->bol->baguette = OCCUPE;
+  philosophe->next->bol->baguette = OCCUPE;
   pthread_mutex_unlock(&mutex);
   printf("[Philosophe %d] Aaahh, enfin mon tour de manger.\n", philosophe->id);
   sleep(EATING_TIME);
@@ -28,14 +25,11 @@ void		philo_manger(t_philo *philosophe, t_philo *table)
   printf("[Philosophe %d] Finalement, c'est bon le riz.\n", philosophe->id);
   pthread_mutex_lock(&mutex);
   philosophe->bol->baguette = LIBRE;
-  if (philosophe->id == 7)
-    table->bol->baguette = LIBRE;
-  else
-    philosophe->next->bol->baguette = LIBRE;
+  philosophe->next->bol->baguette = LIBRE;
   pthread_mutex_unlock(&mutex);
 }
 
-void		philo_penser(t_philo *philosophe, t_philo *table)
+void		philo_penser(t_philo *philosophe)
 {
   philosophe->etat = REFLECHIR;
   philosophe->bol->baguette = OCCUPE;
@@ -46,8 +40,8 @@ void		philo_penser(t_philo *philosophe, t_philo *table)
   while (philosophe->etat != MANGER)
     {
       pthread_mutex_lock(&mutex);
-      if (can_eat(table, philosophe->id) == 1)
-	philo_manger(philosophe, table);
+      if (philosophe->next->bol->baguette == LIBRE)
+	philo_manger(philosophe);
       else
 	pthread_mutex_unlock(&mutex);
     }
@@ -66,19 +60,17 @@ void		philo_repos(t_philo *philosophe)
 
 void		*philo_meca(void *arg)
 {
-  t_philo	*table;
   t_philo	*philo;
 
-  table = (t_philo *)arg;
-  philo = need_that_philo(table, table->need_ID);
+  philo = (t_philo *)arg;
   printf("[Table] Philosophe %d rejoint la table\n", philo->id);
   while (philo->bol->bol == PLEIN)
     {
       pthread_mutex_lock(&mutex);
-      if (can_eat(table, philo->id) == 1 && philo->etat != MANGER)
-	philo_manger(philo, table);
-      else if (philo->bol->baguette == LIBRE && philo->etat == MANGER)
-	philo_penser(philo, table);
+      if (can_eat(philo) == 1 && philo->etat != MANGER)
+	philo_manger(philo);
+      else if (philo->bol->baguette == LIBRE && philo->etat == REPOS)
+	philo_penser(philo);
       else
 	philo_repos(philo);
     }

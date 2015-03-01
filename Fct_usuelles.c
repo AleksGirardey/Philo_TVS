@@ -5,7 +5,7 @@
 ** Login   <girard_x@epitech.net>
 ** 
 ** Started on  Sat Feb 28 14:32:56 2015 ALEXIS GIRARDEY
-** Last update Sun Mar  1 18:33:34 2015 ALEXIS GIRARDEY
+** Last update Sun Mar  1 19:26:18 2015 ALEXIS GIRARDEY
 */
 
 #include <unistd.h>
@@ -27,32 +27,9 @@ int		nb_bols_plein(t_philo *table)
   return (count);
 }
 
-int		can_eat(t_philo	*table, int id_philo)
+int		can_eat(t_philo	*philo)
 {
-  if (id_philo == 7)
-    {
-      if (check_B(table, id_philo) == 1 && check_B(table, 1) == 1)
-	return (1);
-      else
-	return (0);
-    }
-  else
-    {
-      if (check_B(table, id_philo) == 1 && check_B(table, id_philo + 1) == 1)
-	return (1);
-      else
-	return (0);
-    }
-}
-
-int		check_B(t_philo *table, int id)
-{
-  t_philo	*tmp;
-
-  tmp = table;
-  while (tmp->id != id)
-    tmp = tmp->next;
-  if (tmp->bol->baguette == LIBRE)
+  if (philo->bol->baguette == LIBRE && philo->next->bol->baguette == LIBRE)
     return (1);
   else
     return (0);
