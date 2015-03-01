@@ -5,7 +5,7 @@
 ## Login   <girard_x@epitech.net>
 ## 
 ## Started on  Thu Feb 26 09:21:32 2015 ALEXIS GIRARDEY
-## Last update Sun Mar  1 16:32:56 2015 ALEXIS GIRARDEY
+## Last update Sun Mar  1 20:34:37 2015 Mathieu Chassara
 ##
 
 NAME	= philo
@@ -23,10 +23,10 @@ SRC	= table_init.c \
 
 OBJ	= $(SRC:.c=.o)
 
-all:	$(NAME)
-
 $(NAME): $(OBJ)
 	$(CC) -o $(NAME) $(OBJ) $(FLAGS)
+
+all:	$(NAME)
 
 clean:
 	$(RM) $(OBJ)
