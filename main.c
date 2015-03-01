@@ -5,7 +5,7 @@
 ** Login   <girard_x@epitech.net>
 ** 
 ** Started on  Sun Mar  1 16:21:03 2015 ALEXIS GIRARDEY
-** Last update Sun Mar  1 18:51:55 2015 ALEXIS GIRARDEY
+** Last update Sun Mar  1 20:29:31 2015 Mathieu Chassara
 */
 
 #include "Philosophes.h"
@@ -13,13 +13,10 @@
 #include "actions.h"
 #include "Fct_usuelles.h"
 
-struct s_philo	*init_table();
-
-void	philo_wait(t_philo *table)
+void		philo_wait(t_philo *table)
 {
-  int	i;
+  int		i;
   t_philo	*tmp;
-
 
   i = 0;
   tmp = table;
@@ -31,12 +28,11 @@ void	philo_wait(t_philo *table)
     }
 }
 
-int	main(void)
+int		main(void)
 {
   t_philo	*table;
 
   srand(time(NULL));
-
   table = init_table();
   table = lets_eat(table);
   philo_wait(table);

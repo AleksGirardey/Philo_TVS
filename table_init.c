@@ -5,7 +5,7 @@
 ** Login   <girard_x@epitech.net>
 ** 
 ** Started on  Thu Feb 26 10:12:41 2015 ALEXIS GIRARDEY
-** Last update Sun Mar  1 19:41:09 2015 ALEXIS GIRARDEY
+** Last update Sun Mar  1 20:30:18 2015 Mathieu Chassara
 */
 
 #include <stdio.h>
@@ -25,7 +25,7 @@ struct s_bol	*init_bol()
   return (newBol);
 }
 
-struct s_philo		*init_philo(t_bol *bol, int id)
+struct s_philo	*init_philo(t_bol *bol, int id)
 {
   t_philo	*newPhilo;
 
@@ -36,7 +36,7 @@ struct s_philo		*init_philo(t_bol *bol, int id)
   newPhilo->next = NULL;
 }
 
-struct s_philo		*init_table()
+struct s_philo	*init_table()
 {
   int		i;
   t_philo	*table;

@@ -1,0 +1,32 @@
+[Table] Philosophe 2 is joining the table.
+[Philosophe 2] My turn !
+[Table] Philosophe 7 is joining the table.
+[Philosophe 7] My turn !
+[Table] Philosophe 3 is joining the table.
+[Table] Philosophe 5 is joining the table.
+[Philosophe 5] My turn !
+[Table] Philosophe 1 is joining the table.
+[Table] Philosophe 6 is joining the table.
+[Table] Philosophe 4 is joining the table.
+[Philosophe 4] Thinking time.
+[Philosophe 2] Just finished to eat.
+[Table] Philosophe 2 is leaving the table.
+[Philosophe 3] Thinking time.
+[Philosophe 7] Just finished to eat.
+[Table] Philosophe 7 is leaving the table.
+[Philosophe 1] My turn !
+[Philosophe 5] Just finished to eat.
+[Table] Philosophe 5 is leaving the table.
+[Philosophe 6] My turn !
+[Philosophe 4] Meal time..
+[Philosophe 4] My turn !
+[Philosophe 3] Meal time..
+[Philosophe 1] Just finished to eat.
+[Table] Philosophe 1 is leaving the table.
+[Philosophe 6] Just finished to eat.
+[Table] Philosophe 6 is leaving the table.
+[Philosophe 4] Just finished to eat.
+[Philosophe 3] My turn !
+[Table] Philosophe 4 is leaving the table.
+[Philosophe 3] Just finished to eat.
+[Table] Philosophe 3 is leaving the table.
