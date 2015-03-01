@@ -5,11 +5,7 @@
 ** Login   <girard_x@epitech.net>
 ** 
 ** Started on  Sun Mar  1 16:21:03 2015 ALEXIS GIRARDEY
-<<<<<<< HEAD
-** Last update Sun Mar  1 20:53:28 2015 ALEXIS GIRARDEY
-=======
-** Last update Sun Mar  1 20:29:31 2015 Mathieu Chassara
->>>>>>> 45371d8aad915e04d95b6b88f6cd39df67afecc1
+** Last update Sun Mar  1 21:03:51 2015 ALEXIS GIRARDEY
 */
 
 #include "Philosophes.h"
@@ -32,7 +28,6 @@ void		philo_wait(t_philo *table)
     }
 }
 
-<<<<<<< HEAD
 void	clean_table(t_philo *table)
 {
   if (table->id != 7)
@@ -42,10 +37,7 @@ void	clean_table(t_philo *table)
   free(table);
 }
 
-int	main(void)
-=======
 int		main(void)
->>>>>>> 45371d8aad915e04d95b6b88f6cd39df67afecc1
 {
   t_philo	*table;
 
